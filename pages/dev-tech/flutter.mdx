@@ -1,0 +1,60 @@
+---
+title: Flutter
+---
+
+# Flutter
+
+Flutter is Google's open-source UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase using the Dart language.
+
+## Core Concepts
+
+### Widgets
+Everything in Flutter is a widget. Widgets describe what their view should look like given their current configuration and state.
+
+- **StatelessWidget** — immutable, rebuilt only when parent changes
+- **StatefulWidget** — mutable state, can trigger rebuilds via `setState()`
+
+### The Widget Tree
+```
+MaterialApp
+└── Scaffold
+    ├── AppBar
+    └── body: Column
+        ├── Text('Hello')
+        └── ElevatedButton(...)
+```
+
+### State Management
+
+| Approach | Best For |
+|---|---|
+| `setState` | Local, simple widget state |
+| `Provider` | App-wide state, simple DI |
+| `Riverpod` | Scalable, testable state (recommended) |
+| `Bloc/Cubit` | Complex business logic separation |
+
+## Project Structure (recommended)
+```
+lib/
+├── main.dart
+├── app.dart
+├── features/
+│   └── auth/
+│       ├── data/
+│       ├── domain/
+│       └── presentation/
+├── shared/
+│   ├── widgets/
+│   └── theme/
+└── core/
+    ├── router/
+    └── services/
+```
+
+---
+
+## References
+
+- Flutter Team. *Flutter Documentation*. https://docs.flutter.dev
+- Dart Team. *Dart Language Tour*. https://dart.dev/language
+- Riverpod. *Riverpod Documentation*. https://riverpod.dev

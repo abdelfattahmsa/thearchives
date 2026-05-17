@@ -1,0 +1,57 @@
+---
+title: Supabase
+---
+
+# Supabase
+
+Supabase is an open-source Firebase alternative built on top of PostgreSQL. It provides a backend-as-a-service with a managed Postgres database, authentication, real-time subscriptions, object storage, and Edge Functions.
+
+## Core Services
+
+| Service | What It Does |
+|---|---|
+| **Database** | Managed PostgreSQL with full SQL access |
+| **Auth** | Email, OAuth, magic link, phone OTP |
+| **Realtime** | WebSocket subscriptions on database changes |
+| **Storage** | S3-compatible object storage with access policies |
+| **Edge Functions** | TypeScript/Deno functions at the edge |
+
+## Database (PostgreSQL)
+
+Supabase gives you direct Postgres access. Everything is SQL first.
+
+```sql
+-- Row Level Security (RLS) example
+create policy "Users see own data"
+on public.profiles
+for select using (auth.uid() = user_id);
+```
+
+**Always enable RLS** on tables that are client-accessible.
+
+## Authentication
+
+```dart
+// Flutter: sign in with email
+await supabase.auth.signInWithPassword(
+  email: 'user@example.com',
+  password: 'password',
+);
+```
+
+## Realtime
+
+```dart
+supabase
+  .from('messages')
+  .stream(primaryKey: ['id'])
+  .listen((data) { /* handle update */ });
+```
+
+---
+
+## References
+
+- Supabase. *Supabase Documentation*. https://supabase.com/docs
+- Supabase. *Row Level Security Guide*. https://supabase.com/docs/guides/auth/row-level-security
+- PostgreSQL Global Development Group. *PostgreSQL Documentation*. https://www.postgresql.org/docs/

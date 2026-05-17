@@ -1,0 +1,28 @@
+/* The Archives — global style overrides */
+
+:root {
+  --archives-green: #6abf69;
+  --archives-green-dark: #4a9e49;
+}
+
+/* Subtle branded accent on the logo area */
+.nextra-nav-container {
+  border-bottom: 1px solid var(--nextra-colors-primary-800, #1e3a1e22);
+}
+
+/* Clean blockquote styling for references and callouts */
+blockquote {
+  border-left: 3px solid var(--archives-green);
+  padding-left: 1rem;
+  color: var(--nextra-colors-gray-600);
+  font-style: italic;
+}
+
+/* Reference footnote style */
+.reference {
+  font-size: 0.8rem;
+  color: var(--nextra-colors-gray-500);
+  border-top: 1px solid var(--nextra-colors-gray-200);
+  margin-top: 2rem;
+  padding-top: 0.75rem;
+}

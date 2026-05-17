@@ -1,0 +1,55 @@
+---
+title: System Architecture
+---
+
+# System Architecture
+
+Design patterns, architectural principles, and scalability concepts for building robust software systems.
+
+## Core Principles
+
+### SOLID
+| Principle | Meaning |
+|---|---|
+| **S** — Single Responsibility | A class/module should have one reason to change |
+| **O** — Open/Closed | Open for extension, closed for modification |
+| **L** — Liskov Substitution | Subtypes must be substitutable for their base types |
+| **I** — Interface Segregation | Many specific interfaces over one general one |
+| **D** — Dependency Inversion | Depend on abstractions, not concretions |
+
+### Common Patterns
+
+**Layered Architecture**
+```
+Presentation Layer  →  UI, API endpoints
+Application Layer   →  Use cases, orchestration
+Domain Layer        →  Business logic, entities
+Infrastructure      →  Database, external services
+```
+
+**Event-Driven Architecture**
+- Events as the primary communication mechanism
+- Producers emit events; consumers subscribe
+- Enables loose coupling and scalability
+
+**CQRS (Command Query Responsibility Segregation)**
+- Separate models for reading (Query) and writing (Command)
+- Useful for complex domains with high read/write asymmetry
+
+## Scalability Concepts
+
+| Pattern | Purpose |
+|---|---|
+| Horizontal scaling | Add more instances (scale out) |
+| Load balancing | Distribute traffic across instances |
+| Caching (Redis, CDN) | Reduce database and compute load |
+| Message queues | Decouple async workloads |
+| Database sharding | Partition data across multiple DBs |
+
+---
+
+## References
+
+- Martin, R.C. *Clean Architecture*. Prentice Hall, 2017.
+- Fowler, M. *Patterns of Enterprise Application Architecture*. Addison-Wesley, 2002.
+- Richardson, C. *Microservices Patterns*. Manning, 2018.
