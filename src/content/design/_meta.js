@@ -1,0 +1,7 @@
+export default {
+  index: 'Overview',
+  figma: 'Figma',
+  'brand-strategy': 'Brand Strategy',
+  'ui-ux': 'UI/UX Design',
+  'visual-identity': 'Visual Identity',
+}

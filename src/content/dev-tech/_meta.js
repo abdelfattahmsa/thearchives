@@ -1,0 +1,7 @@
+export default {
+  index: 'Overview',
+  flutter: 'Flutter',
+  supabase: 'Supabase',
+  'ai-ml': 'AI & Machine Learning',
+  'system-architecture': 'System Architecture',
+}
